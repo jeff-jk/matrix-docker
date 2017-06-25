@@ -44,7 +44,7 @@ tls_fingerprints: []
 # This is used by remote servers to connect to this server,
 # e.g. matrix.org, localhost:8080, etc.
 # This is also the last part of your UserID.
-server_name: "localhost"
+server_name: "mindlessflow.com:8448"
 
 # When running as a daemon, the file to store the pid in
 pid_file: /data/homeserver.pid
@@ -322,7 +322,7 @@ recaptcha_siteverify_api: "https://www.google.com/recaptcha/api/siteverify"
 ## Turn ##
 
 # The public URIs of the TURN server to give to clients
-turn_uris: ["turn:localhost:3478?transport=udp", "turn:localhost:3478?transport=tcp"]
+turn_uris: ["turn:mindlessflow.com:3478?transport=udp", "turn:mindlessflow.com:3478?transport=tcp"]
 
 # The shared secret used to compute passwords for the TURN server
 turn_shared_secret: "wHRbw8UABT4Rp84AJXscCSshThEOXwasgwbSdzXf7ur4j1RqAYO2jUg2IrAooIoH"
