@@ -346,7 +346,7 @@ turn_allow_guests: True
 ## Registration ##
 
 # Enable registration for new users.
-enable_registration: False
+enable_registration: True
 
 # If set, allows registration by anyone who also has the shared
 # secret, even if registration is otherwise disabled.
