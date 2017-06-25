@@ -29,6 +29,9 @@ ENV MATRIX_UID=991 MATRIX_GID=991
 # use --build-arg REBUILD=$(date) to invalidate the cache and upgrade all
 # packages
 ARG REBUILD=1
+RUN mkdir -p /var/cache/apt/archives/partial \
+    && touch /var/cache/apt/archives/lock \
+    && chmod 640 /var/cache/apt/archives/lock
 RUN set -ex \
     && mkdir /uploads \
     && export DEBIAN_FRONTEND=noninteractive \
