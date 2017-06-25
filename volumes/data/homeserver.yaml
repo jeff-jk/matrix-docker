@@ -4,13 +4,13 @@
 # autogenerates on launch with your own SSL certificate + key pair
 # if you like.  Any required intermediary certificates can be
 # appended after the primary certificate in hierarchical order.
-tls_certificate_path: "/data/localhost.tls.crt"
+tls_certificate_path: "/data/mindlessflow.com:8448.tls.crt"
 
 # PEM encoded private key for TLS
-tls_private_key_path: "/data/localhost.tls.key"
+tls_private_key_path: "/data/mindlessflow.com:8448.tls.key"
 
 # PEM dh parameters for ephemeral keys
-tls_dh_params_path: "/data/localhost.tls.dh"
+tls_dh_params_path: "/data/mindlessflow.com:8448.tls.dh"
 
 # Don't bind to the https port
 no_tls: False
@@ -118,7 +118,7 @@ listeners:
 
   # Unsecure HTTP listener,
   # For when matrix traffic passes through loadbalancer that unwraps TLS.
-  - port: 8008
+  - port: 8048
     tls: false
     bind_addresses: ['0.0.0.0']
     type: http
@@ -159,7 +159,7 @@ verbose: 0
 log_file: "/data/homeserver.log"
 
 # A yaml python logging config file
-log_config: "/data/localhost.log.config"
+log_config: "/data/mindlessflow.com:8448.log.config"
 
 
 ## Ratelimiting ##
@@ -322,10 +322,10 @@ recaptcha_siteverify_api: "https://www.google.com/recaptcha/api/siteverify"
 ## Turn ##
 
 # The public URIs of the TURN server to give to clients
-turn_uris: ["turn:mindlessflow.com:3478?transport=udp", "turn:mindlessflow.com:3478?transport=tcp"]
+turn_uris: ["turn:mindlessflow.com:8448:3478?transport=udp", "turn:mindlessflow.com:8448:3478?transport=tcp"]
 
 # The shared secret used to compute passwords for the TURN server
-turn_shared_secret: "wHRbw8UABT4Rp84AJXscCSshThEOXwasgwbSdzXf7ur4j1RqAYO2jUg2IrAooIoH"
+turn_shared_secret: "Twf0a462b4s0Y1PCjTZ3G3htOj1hYBULx5s6ZLN92uVTMeF6kCMdbUbctLoRuoHl"
 
 # The Username and password if the TURN server needs them and
 # does not use a token
@@ -350,7 +350,7 @@ enable_registration: True
 
 # If set, allows registration by anyone who also has the shared
 # secret, even if registration is otherwise disabled.
-registration_shared_secret: "VEO~&^R&Y_thzn=3q+Yz3de-.Vassr#TFDjJTpDB&HOsZP,z7D"
+registration_shared_secret: "0n6143wB#,H@XzwMZ&P*ke;dOBJ:4Cx.z.-FMCD4v4S5aZz^@S"
 
 # Set the number of bcrypt rounds used to generate password hash.
 # Larger numbers increase the work factor needed to generate the hash.
@@ -391,7 +391,7 @@ room_invite_state_types:
 app_service_config_files: []
 
 
-macaroon_secret_key: "F0aR&f-RuGq^p=ytcG8aJnd~QfuRa+eo4pyH3&QQDK,vn@Cwe~"
+macaroon_secret_key: "T,,-NLvBLqrZBwe*aPztjXsp_,j#LYCb2~tL5&@voPyt:HgE^O"
 
 # Used to enable access token expiration.
 expire_access_token: False
@@ -399,7 +399,7 @@ expire_access_token: False
 ## Signing Keys ##
 
 # Path to the signing key to sign messages with
-signing_key_path: "/data/localhost.signing.key"
+signing_key_path: "/data/mindlessflow.com:8448.signing.key"
 
 # The keys that the server used to sign messages with but won't use
 # to sign new messages. E.g. it has lost its private key
@@ -434,7 +434,7 @@ perspectives:
 #saml2_config:
 #   enabled: true
 #   config_path: "/data/sp_conf.py"
-#   idp_redirect_url: "http://localhost/idp"
+#   idp_redirect_url: "http://mindlessflow.com:8448/idp"
 
 
 
