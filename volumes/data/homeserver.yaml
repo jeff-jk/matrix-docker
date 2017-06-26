@@ -4,16 +4,17 @@
 # autogenerates on launch with your own SSL certificate + key pair
 # if you like.  Any required intermediary certificates can be
 # appended after the primary certificate in hierarchical order.
-tls_certificate_path: "/data/mindlessflow.com:8448.tls.crt"
+tls_certificate_path: "mindlessflowcom_cert_chain.crt"
 
 # PEM encoded private key for TLS
+# tls_private_key_path will be ignored if no_tls is True.
 tls_private_key_path: "/data/mindlessflow.com:8448.tls.key"
 
 # PEM dh parameters for ephemeral keys
 tls_dh_params_path: "/data/mindlessflow.com:8448.tls.dh"
 
 # Don't bind to the https port
-no_tls: False
+no_tls: True
 
 # List of allowed TLS fingerprints for this server to publish along
 # with the signing keys for this server. Other matrix servers that
@@ -44,7 +45,7 @@ tls_fingerprints: []
 # This is used by remote servers to connect to this server,
 # e.g. matrix.org, localhost:8080, etc.
 # This is also the last part of your UserID.
-server_name: "mindlessflow.com:8448"
+server_name: "chat.mindlessflow.com"
 
 # When running as a daemon, the file to store the pid in
 pid_file: /data/homeserver.pid
@@ -98,7 +99,7 @@ listeners:
 
     # Use the X-Forwarded-For (XFF) header as the client IP and not the
     # actual client IP.
-    x_forwarded: false
+    x_forwarded: true
 
     # List of HTTP resources to serve on this listener.
     resources:
@@ -120,10 +121,10 @@ listeners:
   # For when matrix traffic passes through loadbalancer that unwraps TLS.
   - port: 8048
     tls: false
-    bind_addresses: ['0.0.0.0']
+    bind_addresses: ['127.0.0.1']
     type: http
 
-    x_forwarded: false
+    x_forwarded: true
 
     resources:
       - names: [client, webclient]
@@ -159,7 +160,7 @@ verbose: 0
 log_file: "/data/homeserver.log"
 
 # A yaml python logging config file
-log_config: "/data/mindlessflow.com:8448.log.config"
+log_config: "/data/chat.mindlessflow.com.log.config"
 
 
 ## Ratelimiting ##
@@ -312,7 +313,7 @@ recaptcha_private_key: "YOUR_PRIVATE_KEY"
 # public/private key.
 enable_registration_captcha: False
 
-# A secret key used to bypass the captcha test entirely.
+# A secret key used to bypass the captcha start_nginx_container.sh entirely.
 #captcha_bypass_secret: "YOUR_SECRET_HERE"
 
 # The API endpoint to use for verifying m.login.recaptcha responses.
