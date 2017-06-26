@@ -121,7 +121,7 @@ listeners:
   # For when matrix traffic passes through loadbalancer that unwraps TLS.
   - port: 8048
     tls: false
-    bind_addresses: ['127.0.0.1']
+    bind_addresses: ['172.17.0.2']
     type: http
 
     x_forwarded: true
