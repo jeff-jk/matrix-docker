@@ -4,7 +4,7 @@
 # autogenerates on launch with your own SSL certificate + key pair
 # if you like.  Any required intermediary certificates can be
 # appended after the primary certificate in hierarchical order.
-tls_certificate_path: "mindlessflowcom_cert_chain.crt"
+tls_certificate_path: "/data/mindlessflowcom_cert_chain.crt"
 
 # PEM encoded private key for TLS
 # tls_private_key_path will be ignored if no_tls is True.
