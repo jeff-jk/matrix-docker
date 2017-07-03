@@ -1,23 +1,25 @@
 FROM debian:jessie
 
-# Maintainer
-MAINTAINER Silvio Fricke <silvio.fricke@gmail.com>
+LABEL maintainer="jeffjk@gmail.com"
+LABEL "me.jeffjk.vendor"="Jeffjk.me"
+LABEL description="This is a container for running a Matrix homeserver."
+LABEL version='0.1'
 
-# install homerserver template
+# Install homeserver template.
 COPY adds/start.sh /start.sh
 
-# add supervisor configs
+# Supervisord configurations.
 COPY adds/supervisord-matrix.conf /conf/
 COPY adds/supervisord-turnserver.conf /conf/
 COPY adds/supervisord.conf /
 
-# startup configuration
+# Container startup configuration.
 ENTRYPOINT ["/start.sh"]
 CMD ["start"]
 EXPOSE 8448
 VOLUME ["/data"]
 
-# Git branch to build from
+# Git branches to build container from.
 ARG BV_SYN=master
 ARG BV_TUR=master
 # https://github.com/python-pillow/Pillow/issues/1763
