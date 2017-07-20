@@ -140,13 +140,23 @@ listeners:
 
 
 # Database configuration
-database:
+#database:
   # The database engine name
-  name: "sqlite3"
+#  name: "sqlite3"
   # Arguments to pass to the engine
-  args:
+#  args:
     # Path to the database
-    database: "/data/homeserver.db"
+#    database: "/data/homeserver.db"
+    
+database:
+    name: psycopg2
+    args:
+        user: synapse_user
+        password: DBsynapse11!
+        database: synapse
+        host: 172.17.0.4
+        cp_min: 5
+        cp_max: 10
 
 # Number of events to cache in memory.
 event_cache_size: "10K"
