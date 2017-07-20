@@ -8,10 +8,10 @@ tls_certificate_path: "/data/mindlessflowcom_cert_chain.crt"
 
 # PEM encoded private key for TLS
 # tls_private_key_path will be ignored if no_tls is True.
-tls_private_key_path: "/data/mindlessflow.com:8448.tls.key"
+tls_private_key_path: "/data/mindlessflow.com.tls.key"
 
 # PEM dh parameters for ephemeral keys
-tls_dh_params_path: "/data/mindlessflow.com:8448.tls.dh"
+tls_dh_params_path: "/data/mindlessflow.com.tls.dh"
 
 # Don't bind to the https port
 no_tls: True
@@ -147,7 +147,7 @@ listeners:
 #  args:
     # Path to the database
 #    database: "/data/homeserver.db"
-    
+
 database:
     name: psycopg2
     args:
@@ -410,7 +410,7 @@ expire_access_token: False
 ## Signing Keys ##
 
 # Path to the signing key to sign messages with
-signing_key_path: "/data/mindlessflow.com:8448.signing.key"
+signing_key_path: "/data/mindlessflow.com.signing.key"
 
 # The keys that the server used to sign messages with but won't use
 # to sign new messages. E.g. it has lost its private key
