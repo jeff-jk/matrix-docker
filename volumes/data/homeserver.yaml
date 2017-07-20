@@ -121,7 +121,7 @@ listeners:
   # For when matrix traffic passes through loadbalancer that unwraps TLS.
   - port: 8048
     tls: false
-    bind_addresses: ['172.17.0.2']
+    bind_addresses: ['0.0.0.0']
     type: http
 
     x_forwarded: true
@@ -154,7 +154,7 @@ database:
         user: synapse_user
         password: DBsynapse11!
         database: synapse
-        host: 172.17.0.4
+        host: postgres
         cp_min: 5
         cp_max: 10
 
