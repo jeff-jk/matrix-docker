@@ -4,7 +4,7 @@
 # autogenerates on launch with your own SSL certificate + key pair
 # if you like.  Any required intermediary certificates can be
 # appended after the primary certificate in hierarchical order.
-tls_certificate_path: "/data/mindlessflowcom_cert_chain.crt"
+tls_certificate_path: "/data/mindlessflowcom.com.tls.crt"
 
 # PEM encoded private key for TLS
 # tls_private_key_path will be ignored if no_tls is True.
@@ -14,7 +14,7 @@ tls_private_key_path: "/data/mindlessflow.com.tls.key"
 tls_dh_params_path: "/data/mindlessflow.com.tls.dh"
 
 # Don't bind to the https port
-no_tls: True
+no_tls: False
 
 # List of allowed TLS fingerprints for this server to publish along
 # with the signing keys for this server. Other matrix servers that
